@@ -8,11 +8,12 @@ namespace OopTheoryLibrary
 {
     public static class ParametersPassing
     {
-        public static void Increment(int i)
+        public static void Increment(int i, out int incremented)
         {
+            incremented = 0;
             Console.WriteLine($"{nameof(ParametersPassing)} - Value before increment: {i}");
-            i = i + 1;
-            Console.WriteLine($"{nameof(ParametersPassing)} - Value after increment: {i}");
+            incremented = i + 1;
+            Console.WriteLine($"{nameof(ParametersPassing)} - Value after increment: {incremented}");
         }
 
         public static void ChangePersonName(Person person)
@@ -22,7 +23,7 @@ namespace OopTheoryLibrary
             Console.WriteLine($"{nameof(ParametersPassing)} - Name after change: {person.Name}");
         }
 
-        public static void ChangePersonName2(Person person)
+        public static void ChangePersonName2(ref Person person)
         {
             Console.WriteLine($"{nameof(ParametersPassing)} - Name before change: {person.Name}");
             person = new Person("Changed name", person.DateOfBirth);
