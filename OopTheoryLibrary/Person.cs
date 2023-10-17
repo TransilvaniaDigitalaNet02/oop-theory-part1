@@ -21,7 +21,7 @@ namespace OopTheoryLibrary
 
         public void PresentYourself()
         {
-            Console.WriteLine($"Hi, my name is {Name}, and I was born on {DateOfBirth:yyyy-MM-dd}");
+            Console.WriteLine($"Hi, my name is {this.Name}, and I was born on {this.DateOfBirth:yyyy-MM-dd}");
         }
 
         public void PrintCanIVote()

@@ -6,7 +6,7 @@ namespace OopTheoryFirstPart
     {
         static void Main(params string[] args)
         {
-            Person person = new Person("John Doe", new DateTime(1993, 10, 12));
+            Person person = new Person(dateOfBirth: new DateTime(1993, 10, 12), name: "John Doe");
             person.PresentYourself();
 
             person.ChangePersonalData("John Doee");
@@ -25,9 +25,10 @@ namespace OopTheoryFirstPart
             RecursivityHelper.Iterate(array2);
 
             /* Methods with optional params */
-            decimal price1 = PriceCalculator.CalculatePrice(10);
-            decimal price2 = PriceCalculator.CalculatePrice(15, 3);
-            decimal price3 = PriceCalculator.CalculatePrice(20, 5, 9);
+            decimal price1 = PriceCalculator.CalculatePrice(unitPrice: 10);
+            decimal price2 = PriceCalculator.CalculatePrice(unitPrice: 15, quantity: 3);
+            decimal price3 = PriceCalculator.CalculatePrice(unitPrice: 20, quantity: 5, vatPercent: 9);
+            decimal price4 = PriceCalculator.CalculatePrice(20, vatPercent: 9);
         }
     }
 }
