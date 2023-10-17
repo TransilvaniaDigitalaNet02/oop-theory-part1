@@ -10,9 +10,23 @@ namespace OopTheoryLibrary
     {
         public static void Increment(int i)
         {
-            Console.WriteLine($"Value before increment: {i}");
+            Console.WriteLine($"{nameof(ParametersPassing)} - Value before increment: {i}");
             i = i + 1;
-            Console.WriteLine($"Value after increment: {i}");
+            Console.WriteLine($"{nameof(ParametersPassing)} - Value after increment: {i}");
+        }
+
+        public static void ChangePersonName(Person person)
+        {
+            Console.WriteLine($"{nameof(ParametersPassing)} - Name before change: {person.Name}");
+            person.ChangePersonalData("Changed name");
+            Console.WriteLine($"{nameof(ParametersPassing)} - Name after change: {person.Name}");
+        }
+
+        public static void ChangePersonName2(Person person)
+        {
+            Console.WriteLine($"{nameof(ParametersPassing)} - Name before change: {person.Name}");
+            person = new Person("Changed name", person.DateOfBirth);
+            Console.WriteLine($"{nameof(ParametersPassing)} - Name after change: {person.Name}");
         }
     }
 }
