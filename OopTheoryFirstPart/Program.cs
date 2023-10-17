@@ -4,7 +4,7 @@ namespace OopTheoryFirstPart
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(params string[] args)
         {
             Person person = new Person("John Doe", new DateTime(1993, 10, 12));
             person.PresentYourself();
@@ -23,6 +23,11 @@ namespace OopTheoryFirstPart
 
             int[] array2 = new[] { 1, 2, 3, 4 };
             RecursivityHelper.Iterate(array2);
+
+            /* Methods with optional params */
+            decimal price1 = PriceCalculator.CalculatePrice(10);
+            decimal price2 = PriceCalculator.CalculatePrice(15, 3);
+            decimal price3 = PriceCalculator.CalculatePrice(20, 5, 9);
         }
     }
 }
